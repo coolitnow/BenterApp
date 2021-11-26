@@ -9,7 +9,7 @@ class Aztro extends React.Component {
     }
 
     componentDidMount () {
-        const URL = 'https://aztro.sameerkumar.website/?sign=aries&day=today';
+        const URL = 'https://aztro.sameerkumar.website/?sign=scorpio&day=today';
         fetch(URL, {
             method: 'POST'
         }).then(response => response.json())
@@ -24,7 +24,6 @@ class Aztro extends React.Component {
               Lucky Number: {this.state.json.lucky_number} <br />
               Lucky Time: {this.state.json.lucky_time} <br />
               Color: {this.state.json.color} <br />
-              Date Range: {this.state.json.date_range} <br />
               Mood: {this.state.json.mood} <br />
               Description: {this.state.json.description} <br />
           </div>
