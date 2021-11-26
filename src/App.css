@@ -2,13 +2,30 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.AxlContainer{
+  position: relative;
+  height: 50vmin;
+
+}
+
+.AxlPic {
+  height: 100%;
+  
+}
+
+.DuneQ-Container{
+  height: 15%;
+}
+.DuneQ {
+  position: absolute;
+  font-size: calc(10px + 1vmin);
+  left: auto;
+  right: auto;
+  bottom: 8px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .Title {
     animation: App-logo-spin infinite 20s linear;
   }
 }

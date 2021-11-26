@@ -9,7 +9,7 @@ class DuneQ extends React.Component {
     super(props);
 
     this.state = {
-      duneQuotes: []
+      singleQ: ''
     }
 
   }
@@ -29,26 +29,19 @@ class DuneQ extends React.Component {
     fetch("https://the-dune-api.herokuapp.com/quotes")
       .then(res =>
         res.json())
-      .then (json_response =>
-          this.setState({duneQuotes: json_response}));
+      .then (duneQuotes =>
+        {this.setState({singleQ: duneQuotes[0].quote})} 
+        );;
   }
-
-  load
-
-  load
   
   render() {
-    let showQuote = [];
-    for(let i = 0; i < this.state.duneQuotes.length; i++)
-    {
-      showQuote.push(<li>{this.state.duneQuotes[i].quote}</li>)
-    }
-    
 
     return (
-      <div className="DuneQ">
-        {showQuote}
-      </div>
+      <div className="DuneQ-Container">
+        <div className="DuneQ">
+            {this.state.singleQ}
+        </div>
+      </div>  
     );
   }
 }
