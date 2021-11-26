@@ -2,6 +2,8 @@
 
 import React from 'react';
 import './App.css';
+import './Strology';
+import Aztro from './Strology';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,8 +32,11 @@ class App extends React.Component {
         res.json())
       .then (json_response =>
           this.setState({duneQuotes: json_response}));
-    
   }
+
+  load
+
+  load
   
   render() {
     let showQuote = [];
@@ -39,9 +44,11 @@ class App extends React.Component {
     {
       showQuote.push(<li>{this.state.duneQuotes[i].quote}</li>)
     }
+    
 
     return (
       <div className="App">
+        <Aztro />
         Put quotes here
         {showQuote}
       </div>
