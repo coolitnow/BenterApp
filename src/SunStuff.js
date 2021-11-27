@@ -12,18 +12,19 @@ class SunStuff extends React.Component {
             lon: '',
             timeZone: '',
             offSet: '',
+            rise: '',
+            set: '',
+
 
             infoStuff: [],
             sunStuff: []
         }
 
-        //this.loadSun = this.loadSun.bind(this);
-        //this.loadLocation = this.loadLocation.bind(this)
+
     }
 
-     componentDidMount() {
+    componentDidMount() {
         this.loadLocation();
-        //this.loadSun();
     }
 
     loadLocation = () => {
@@ -33,44 +34,79 @@ class SunStuff extends React.Component {
             .then(res =>
                 res.json())
             .then(json_response =>
-                //get and set lat, lon, and timezone in order to query the sunrise-sunset api
-                this.setState({lat: json_response.latitude, lon: json_response.longitude, timeZone: json_response.timezone.abbreviation}))
+            //get and set lat, lon, and timezone in order to query the sunrise-sunset api
+            {
+                console.log(json_response);
+                this.setState({ lat: json_response.latitude, lon: json_response.longitude, offSet: json_response.timezone.gmt_offset })
+            })
             .then(() => fetch("https://api.sunrise-sunset.org/json?lat=" + this.state.lat + "&lng=" + this.state.lon + "&date=today")
-            .then(res =>
-                res.json())
-            .then(sunny =>
-                this.setState({ sunStuff: sunny.results })))
-            .then()
+                .then(res =>
+                    res.json())
+                .then(sunny => {
+                    console.log(sunny);
+                    this.setState({ sunStuff: sunny.results });
+                    this.convertTime();
+                }))
+
+
 
     }
 
-convertTime = () => {
-    //make hash of timezones' offsets from UTC
-    //if EST = -7
-    //setState(offSet = )
-    let timeZoneHash = {};
-    timeZoneHash['EST'] = -5;
-    console.log(timeZoneHash['EST']);
-}
+    convertTime = () => {
+        //times come back in UTC
+        //convert to local time
+
+        let sunrise = this.state.sunStuff.sunrise;
+        let sunset = this.state.sunStuff.sunset;
 
 
-// loadSun() {
-//         fetch("https://api.sunrise-sunset.org/json?lat=" + this.state.lat + "&lng=" + this.state.lon + "&date=today")
-//             .then(res =>
-//                 res.json())
-//             .then(sunny =>
-//                 console.log({ sunStuff: sunny.results }))
-            
-            
-//     }
+        if (sunrise.length === 11) {
+            //11=string length the our is 10,11, or 12
+            //know that hours is 2 digit number
+            let hour = parseInt(sunrise.substr(0, 2));
+            //get hour, then convert using the offset grabbed from creepy geo API
+            hour += this.state.offSet;
+            let recalcHour = hour + sunrise.substr(2, 3) + ' AM';
+
+            this.setState({ rise: recalcHour });
+        }
+        else {
+            //hour is only 1 digit
+            let hour = parseInt(sunrise.substr(0, 1));
+            hour += this.state.offSet;
+            let recalcHour = hour + sunrise.substr(1, 3) + ' AM';
+            this.setState({ rise: recalcHour });
+        }
+        if (sunset.length === 11) {
+            //know that hours is 2 digit number
+            let hour = parseInt(sunset.substr(0, 2));
+            //get hour, then convert using the offset grabbed from creepy geo API
+            hour += this.state.offSet;
+            let recalcHour = hour + sunset.substr(2, 3) + ' PM';
+
+            this.setState({ set: recalcHour });
+        }
+        else {
+            let hour = parseInt(sunset.substr(0, 1));
+            hour += this.state.offSet;
+            let recalcHour = hour + sunset.substr(1, 3) + ' PM';
+            this.setState({ set: recalcHour });
+        }
+
+
+    }
+
+
+
 
     render() {
-        
-        
+
+
+
         return (
             <div className="Sun-stuff">
-                <div>sunrise: </div>
-                <div>sunset: </div>
+                <div>sunrise: {this.state.rise}</div>
+                <div>sunset: {this.state.set}</div>
             </div>
         )
 
