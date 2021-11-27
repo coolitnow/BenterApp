@@ -17,8 +17,9 @@ body{
 
 .AxlContainer{
   position: relative;
-  height: 50vmin;
-
+  height: 75vmin;
+  display:flex;
+  flex-direction: column-reverse;
 }
 
 .AxlPic {
@@ -28,14 +29,19 @@ body{
 
 .DuneQ-Container{
   height: 15%;
+  width: inherit;
+  display: flex;
+  align-items: center;
+
 }
 .DuneQ {
+  display: flex;
   position: absolute;
-  font-size: calc(10px + 1vmin);
-  left: auto;
-  right: auto;
-  bottom: 8px;
+  font-size: calc(16px + 15%);
+  padding-bottom: 2vmin;
+  
 }
+.quote
 
 @media (prefers-reduced-motion: no-preference) {
   .Title {
@@ -46,12 +52,21 @@ body{
 .App-header {
   background-color: #282c34;
   min-height: 20vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+.Sun-stuff{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: coral;
+  font-size: calc(12px + 3vmin)
+
 }
 
 .App-link {

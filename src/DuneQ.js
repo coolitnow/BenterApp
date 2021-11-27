@@ -37,11 +37,9 @@ class DuneQ extends React.Component {
   render() {
 
     return (
-      <div className="DuneQ-Container">
         <div className="DuneQ">
             {this.state.singleQ}
-        </div>
-      </div>  
+        </div>  
     );
   }
 }

@@ -17,9 +17,12 @@ class Bored extends React.Component {
     }
 
     render() {
+
+
         return (
-          <div>
-              activity: {this.state.boredStuff.activity} <br />
+          <div className="bored">
+            <div>Why Not:</div>
+            <div>{this.state.boredStuff.activity} </div>
           </div>
         );
     }
