@@ -25,6 +25,7 @@ class SunStuff extends React.Component {
 
     componentDidMount() {
         this.loadLocation();
+
     }
 
     loadLocation = () => {
@@ -49,8 +50,9 @@ class SunStuff extends React.Component {
                 }))
 
 
-
     }
+
+
 
     convertTime = () => {
         //times come back in UTC
@@ -105,9 +107,18 @@ class SunStuff extends React.Component {
 
         return (
             <div className="Sun-stuff">
+                <div id="sun" className="sun">
+                    <div id="rings">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
                 <div>sunrise: {this.state.rise}</div>
                 <div>sunset: {this.state.set}</div>
             </div>
+
         )
 
     }

@@ -9,14 +9,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <div><SunStuff /></div>
+      <div className="Header-Holders"><SunStuff /></div>
       
-      <div>
+      <div className="Header-Holders">
           <div>Sum Cool</div>
           <div>Where you from?</div>
       </div>
       
-      <div>put sunset here</div>
+      <div className="Header-Holders">put moonstuff? here</div>
       </header>  
       <div><Axolotl /></div>
       <div><Bored /></div>
