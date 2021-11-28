@@ -14,6 +14,7 @@ class SunStuff extends React.Component {
             offSet: '',
             rise: '',
             set: '',
+            daylight: '',
 
             infoStuff: [],
             sunStuff: []
@@ -46,6 +47,7 @@ class SunStuff extends React.Component {
                     console.log(sunny);
                     this.setState({ sunStuff: sunny.results });
                     this.convertTime();
+                    this.convertDaylight();
                 }))
 
 
@@ -54,6 +56,7 @@ class SunStuff extends React.Component {
 
 
     convertTime = () => {
+        //function runs in load location
         //times come back in UTC
         //convert to local time
 
@@ -96,6 +99,23 @@ class SunStuff extends React.Component {
 
 
     }
+
+    convertDaylight = () => {
+        //format the hours of daylight
+        //function runs in load location
+        let hours = this.state.sunStuff.day_length;
+
+        if (hours.substr(0, 1) === '0'){
+            let day = hours.substr(1, 7);
+        
+            this.setState({daylight: day});
+        }
+        else {
+            let day = hours.substr(1, 8)
+            this.setState({daylight: day});
+        }
+        
+    }
     
 
     
@@ -114,6 +134,7 @@ class SunStuff extends React.Component {
             <div>
                 <div >sunrise: {this.state.rise}</div>
                 <div >sunset: {this.state.set}</div>
+                <div> day length: {this.state.daylight}</div>
             </div>
 
         )
