@@ -3,17 +3,16 @@ import './App.css';
 import './Bored';
 import Bored from './Bored';
 import Axolotl from './Axoltl';
-import SunStuff from './SunStuff';
+import Sun from './Sun.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <div className="Header-Holders"><SunStuff /></div>
+      <div className="Header-Holders"><Sun /></div>
       
       <div className="Header-Holders">
-          <div>Sum Cool</div>
-          <div>Where you from?</div>
+          <div className="spin">Sum Cool</div>
       </div>
       
       <div className="Header-Holders">put moonstuff? here</div>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import "./Coords";
+
 
 
 class SunStuff extends React.Component {
@@ -14,7 +14,6 @@ class SunStuff extends React.Component {
             offSet: '',
             rise: '',
             set: '',
-
 
             infoStuff: [],
             sunStuff: []
@@ -97,6 +96,11 @@ class SunStuff extends React.Component {
 
 
     }
+    
+
+    
+
+
 
 
 
@@ -105,18 +109,11 @@ class SunStuff extends React.Component {
 
 
 
+
         return (
-            <div className="Sun-stuff">
-                <div id="sun" className="sun">
-                    <div id="rings">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div>sunrise: {this.state.rise}</div>
-                <div>sunset: {this.state.set}</div>
+            <div>
+                <div >sunrise: {this.state.rise}</div>
+                <div >sunset: {this.state.set}</div>
             </div>
 
         )
