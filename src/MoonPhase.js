@@ -10,7 +10,9 @@ class MoonPhase extends React.Component {
         super(props);
 
         this.state = {
-            moonInformation: {}
+            moonInformation: {},
+            moonPhase: '',
+            moonSentence: ''
         }
     }
 
@@ -24,12 +26,34 @@ class MoonPhase extends React.Component {
         .then(res => res.json())
         .then(response => {
             this.setState({moonInformation: response})
-            console.log(this.state.moonInformation)
+            this.setState({moonSentence: this.convertMoonPhase()});
+
             });
     }
     
-    convertMoonPhase() {
 
+    convertMoonPhase() {
+        var moonDouble = parseFloat(this.state.moonInformation.days[1].moonphase);
+        console.log(moonDouble);
+        if(moonDouble === 0.0) 
+            this.setState({moonSentence: 'NEW MOOOON!!!!'}) 
+        else if(0.0 < moonDouble && moonDouble < 0.25)
+            this.setState({moonSentence: 'Waxing Crescent'})
+        else if (moonDouble === 0.25) 
+            this.setState({moonSentence: 'First Quarter'})
+        else if (0.25 < moonDouble && moonDouble < 0.5)  
+            this.setState({moonSentence: 'Waxing Gibbous'})
+        else if (moonDouble === .5)
+            this.setState({moonSentence: 'FULL MOOOOOOON!!!'})
+        else if (0.5 < moonDouble && moonDouble < 0.75)
+            this.setState({moonSentence: 'Waning Gibbous'})
+        else if (moonDouble === 0.75)
+            this.setState({moonSentence: 'Third Quarter'})
+        else if (0.75 < moonDouble && moonDouble < 1.0)
+            this.setState({moonSentence: 'Waning Crescent'})
+        
+        return (this.state.moonSentence);
+            
     }
 
 
@@ -38,7 +62,7 @@ class MoonPhase extends React.Component {
 
         return(
             <div>
-                
+                {this.state.moonSentence}
             </div>
         )
     }
