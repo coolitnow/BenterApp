@@ -129,12 +129,6 @@ class SunStuff extends React.Component {
                 <div >sunset: {this.state.set}</div>
                 <div> day length: {this.state.daylight}</div>
             
-            <MContext.Provider value={
-            {   state: this.state,
-                setLat: (lat) => this.setState({
-                            lat: lat })}}>
-            {this.props.children}   
-            </MContext.Provider>)
             </div>
 
         )

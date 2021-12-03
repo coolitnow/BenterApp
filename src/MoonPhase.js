@@ -24,7 +24,7 @@ class MoonPhase extends React.Component {
     }
 
     loadMoon() {
-        fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK/next5days?unitGroup=us&key=XWCFHQE7CRBLM99NWZR2QLTF2"
+        fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Pittsburgh?unitGroup=us&key=XWCFHQE7CRBLM99NWZR2QLTF2&include=current"
             )
         .then(res => res.json())
         .then(response => {
@@ -76,8 +76,8 @@ class MoonPhase extends React.Component {
 
 
         return(
-            <div>
-           <img  src={this.state.picOfMoonUrl} />
+            <div className="lunarStyle">
+           <img  src={this.state.picOfMoonUrl} alt={this.state.moonSentence}/>
             </div>
         )
     }

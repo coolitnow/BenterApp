@@ -24,7 +24,7 @@ class Axolotl extends React.Component {
         .then(res =>
             res.json())
         .then(json_response =>
-            this.setState({cutePic: json_response.url}));
+            this.setState({cutePic: json_response.message}));
     }
 
     render(){
