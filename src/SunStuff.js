@@ -124,10 +124,10 @@ class SunStuff extends React.Component {
 
 
         return (
-            <div>
+            <div className="Sun-Text">
                 <div >sunrise: {this.state.rise}</div>
                 <div >sunset: {this.state.set}</div>
-                <div> day length: {this.state.daylight}</div>
+                <div > day length: {this.state.daylight}</div>
             
             </div>
 

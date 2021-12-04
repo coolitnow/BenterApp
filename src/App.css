@@ -86,7 +86,6 @@ body{
 }
 .Header-Holders{
   flex-basis: calc(100% / 4);
-  
   flex-shrink: 1;
 }
 .Sun-stuff{
@@ -94,9 +93,18 @@ body{
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  color: coral;
-  font-size: 2vmin;
   position: relative;
+}
+.Sun-Text{
+  font-size: 3vmin;
+  color: coral;
+  border-radius: 50% 50%;
+  border: .3px solid cornsilk;
+  box-shadow: 
+          inset 0px 0px 3em 1px cornsilk,
+                0px 0px 3em 1em  cornsilk;
+              
+  text-shadow: 1px 1px rgb(1, 14, 29);
 }
 
 .spin {
@@ -112,9 +120,10 @@ body{
   width: 23vw;
 	height: 23vw;
   object-fit: contain;
+  justify-content: center;
 }
 .lunarStyle img {
- 
+
 }
 
 

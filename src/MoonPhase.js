@@ -42,7 +42,7 @@ class MoonPhase extends React.Component {
             {this.setState({moonSentence: 'NEW MOOOON!!!!', picOfMoonUrl: "https://i.ibb.co/yQDF8Lk/newmoon.png"})}
 
         else if(0.0 < moonDouble && moonDouble < 0.25)
-            this.setState({moonSentence: 'Waxing Crescent', picOfMoonUrl: "https://i.ibb.co/2tdWhs4/wc.jpg"})
+            this.setState({moonSentence: 'Waxing Crescent', picOfMoonUrl: "https://i.ibb.co/cgGpzZF/waxingcres.png"})
 
         else if (moonDouble === 0.25) 
             this.setState({moonSentence: 'First Quarter', picOfMoonUrl: "https://i.ibb.co/dJgB3qC/firstQ.png"})
@@ -57,9 +57,6 @@ class MoonPhase extends React.Component {
         else if (0.75 < moonDouble && moonDouble < 1.0){
             this.setState({moonSentence: 'Waning Crescent', picOfMoonUrl: "https://i.ibb.co/C8Nh35n/waningcres.png"});
            };
-           
-        
-            
         
         
         console.log(this.state.picOfMoonUrl)
