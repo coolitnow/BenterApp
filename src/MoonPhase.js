@@ -34,30 +34,28 @@ class MoonPhase extends React.Component {
 
             });
     }
-    
-
     convertMoonPhase() {
         var moonDouble = parseFloat(this.state.moonInformation.days[1].moonphase);
         let path = ''
         console.log(moonDouble);
         if(moonDouble === 0.0) 
-            {this.setState({moonSentence: 'NEW MOOOON!!!!', picOfMoonUrl: "https://i.ibb.co/pJwS3ZP/newmoon.jpg"})}
+            {this.setState({moonSentence: 'NEW MOOOON!!!!', picOfMoonUrl: "https://i.ibb.co/yQDF8Lk/newmoon.png"})}
 
         else if(0.0 < moonDouble && moonDouble < 0.25)
             this.setState({moonSentence: 'Waxing Crescent', picOfMoonUrl: "https://i.ibb.co/2tdWhs4/wc.jpg"})
 
         else if (moonDouble === 0.25) 
-            this.setState({moonSentence: 'First Quarter', picOfMoonUrl: "https://i.ibb.co/XsjyYdy/oneq.jpg"})
+            this.setState({moonSentence: 'First Quarter', picOfMoonUrl: "https://i.ibb.co/dJgB3qC/firstQ.png"})
         else if (0.25 < moonDouble && moonDouble < 0.5)  
-            this.setState({moonSentence: 'Waxing Gibbous', picOfMoonUrl: "https://i.ibb.co/LNQF8Sy/wg.jpg"})
+            this.setState({moonSentence: 'Waxing Gibbous', picOfMoonUrl: "https://i.ibb.co/cgGpzZF/waxingcres.png"})
         else if (moonDouble === .5)
-            this.setState({moonSentence: 'FULL MOOOOOOON!!!', picOfMoonUrl: "https://i.ibb.co/DRWHP3g/fullCage.png"})
+            this.setState({moonSentence: 'FULL MOOOOOOON!!!', picOfMoonUrl: "https://i.ibb.co/9ypTJvg/full.png"})
         else if (0.5 < moonDouble && moonDouble < 0.75)
-            this.setState({moonSentence: 'Waning Gibbous', picOfMoonUrl: "https://i.ibb.co/HY7yKfS/wangib.jpg"})
+            this.setState({moonSentence: 'Waning Gibbous', picOfMoonUrl: "https://i.ibb.co/TvL9X1M/waninggib.png"})
         else if (moonDouble === 0.75)
-            this.setState({moonSentence: 'Third Quarter', picOfMoonUrl: "https://i.ibb.co/M28v5rK/thirdq.jpg"})
+            this.setState({moonSentence: 'Third Quarter', picOfMoonUrl: "https://i.ibb.co/QcWhVj5/thirdQ.png"})
         else if (0.75 < moonDouble && moonDouble < 1.0){
-            this.setState({moonSentence: 'Waning Crescent', picOfMoonUrl: "https://i.ibb.co/9N9ZzkV/wancres.jpg"});
+            this.setState({moonSentence: 'Waning Crescent', picOfMoonUrl: "https://i.ibb.co/C8Nh35n/waningcres.png"});
            };
            
         
@@ -76,8 +74,10 @@ class MoonPhase extends React.Component {
 
 
         return(
+            <div className="lunarContainer">
             <div className="lunarStyle">
-           <img  src={this.state.picOfMoonUrl} alt={this.state.moonSentence}/>
+                <img src={this.state.picOfMoonUrl} alt={this.state.moonSentence}/>
+            </div>
             </div>
         )
     }

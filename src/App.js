@@ -1,4 +1,4 @@
-import React,  from 'react';
+import React from 'react';
 import './App.css';
 import './Bored';
 import Bored from './Bored';
@@ -18,9 +18,11 @@ function App() {
       </div>
       
       <div className="Header-Holders"><MoonPhase /></div>
-      </header>  
+      </header>
+      <div className="MiddleContainer"> 
       <div><Axolotl /></div>
       <div><Bored /></div>
+      </div> 
       
     </div>
   );

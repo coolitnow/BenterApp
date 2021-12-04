@@ -25,6 +25,7 @@ function Axolotl() {
                 }
             )
     }, [])
+    //has to be passed an array
 
     return (
         <div className="DuneQ-Container">

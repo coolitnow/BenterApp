@@ -1,14 +1,25 @@
+.MiddleContainer{
+  display: flex;
+  flex: 1;
+  margin: auto;
+  max-width: 75rem;
+  flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
     min-height: 100vh;
     display: flex;
+    flex-basis: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    z-index: 0;
+    z-index: 12;
 }
 body{
   padding: 0;
@@ -17,6 +28,7 @@ body{
 
 .AxlContainer{
   position: relative;
+  
   height: 50vw;
   display:flex;
   flex-direction: column-reverse;
@@ -27,10 +39,12 @@ body{
   height: 100%;
   
 }
-
+.CenterContainer {
+  display: flex;
+}
 .DuneQ-Container{
   height: 10%;
-  width: inherit;
+  flex: 0;
   display: flex;
   align-items: center;
 
@@ -38,7 +52,9 @@ body{
 .DuneQ {
   display: flex;
   position: absolute;
+  flex: 3;
   font-size: 100%;
+  flex: 0 0 50%;
   padding-bottom: 2vmin;
   text-shadow: 2px 2px cornflowerblue;
   color: white;
@@ -56,18 +72,22 @@ body{
 
 .App-header {
   background-color: #282c34;
+  flex: 1;
   min-height: 20vh;
+  max-height: 30vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content:space-around;
   font-size: calc(px + 2vmin);
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .Header-Holders{
-  width: 33.33%;
+  flex-basis: calc(100% / 4);
+  
+  flex-shrink: 1;
 }
 .Sun-stuff{
   display: flex;
@@ -87,17 +107,21 @@ body{
   line-height: 48px; 
   margin: 0; 
 }
-
-.lunarStyle{
-  width: 25vw;
-	height: 25vw;
+.lunarContainer .lunarStyle{
+  display: flex;
+  width: 23vw;
+	height: 23vw;
+  object-fit: contain;
+}
+.lunarStyle img {
+ 
 }
 
 
 .sun{
   position: absolute;
   display: flex;
-  content: url(https://i.ibb.co/s56gTLy/23771-3-sun-free-download-400x400.png);
+  content: url(https://i.ibb.co/30Ynx6g/580b585b2edbce24c47b270f.png);
   position: absolute;
   width: 25vw;
 	height: 25vw;
