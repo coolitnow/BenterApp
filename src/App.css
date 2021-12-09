@@ -3,6 +3,7 @@
   flex: 1;
   margin: auto;
   max-width: 75rem;
+  max-height: 75vh;
   flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -28,15 +29,17 @@ body{
 
 .AxlContainer{
   position: relative;
-  
-  height: 50vw;
+  height: 60vh;
   display:flex;
   flex-direction: column-reverse;
   align-items: center;
+  
 }
 
 .AxlPic {
   height: 100%;
+  border-radius: 15%;
+  box-shadow: 3px 3px 20px 8px aliceblue;
   
 }
 .CenterContainer {
@@ -60,9 +63,10 @@ body{
   color: white;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color:white;
+  justify-self: center;
+  
   
 }
-.quote
 
 @media (prefers-reduced-motion: no-preference) {
   .Title {
@@ -74,8 +78,8 @@ body{
   background-color: #282c34;
   flex: 1;
   min-height: 20vh;
-  max-height: 30vh;
-  width: 100vw;
+  max-height: 25vh;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,10 +87,13 @@ body{
   font-size: calc(px + 2vmin);
   margin-right: auto;
   margin-left: auto;
+  object-fit: scale-down;
 }
 .Header-Holders{
   flex-basis: calc(100% / 4);
-  flex-shrink: 1;
+  flex-shrink: 0;
+  max-height: 25vh;
+  object-fit: contain;
 }
 .Sun-stuff{
   display: flex;
@@ -94,9 +101,16 @@ body{
   justify-content: center;
   align-items: center;
   position: relative;
+  
 }
 .Sun-Text{
-  font-size: 3vmin;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column;
+  max-width: 75%;
+  flex: 0 0 50%;
+  font-size: 2vh;
   color: coral;
   border-radius: 50% 50%;
   border: .3px solid cornsilk;
@@ -105,6 +119,9 @@ body{
                 0px 0px 3em 1em  cornsilk;
               
   text-shadow: 1px 1px rgb(1, 14, 29);
+}
+.bored{
+  padding-top: 25px;
 }
 
 .spin {
@@ -126,14 +143,12 @@ body{
 
 }
 
-
 .sun{
   position: absolute;
   display: flex;
-  content: url(https://i.ibb.co/30Ynx6g/580b585b2edbce24c47b270f.png);
+  content: url(https://i.ibb.co/2tPYzB3/580b585b2edbce24c47b270f.png);
   position: absolute;
-  width: 25vw;
-	height: 25vw;
+  width: 90%;
   overflow: hidden;
   z-index: 1;
   
@@ -142,7 +157,7 @@ body{
 .sun:hover
 {
         animation-name: spin;
-        animation-duration: 5000ms;
+        animation-duration: 3000ms;
         animation-iteration-count: infinite;
         animation-timing-function: linear; 
 }
