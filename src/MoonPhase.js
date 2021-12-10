@@ -42,7 +42,8 @@ class MoonPhase extends React.Component {
             {this.setState({moonSentence: 'NEW MOOOON!!!!', picOfMoonUrl: "https://i.ibb.co/yQDF8Lk/newmoon.png"})}
 
         else if(0.0 < moonDouble && moonDouble < 0.25)
-            this.setState({moonSentence: 'Waxing Crescent', picOfMoonUrl: "https://i.ibb.co/cgGpzZF/waxingcres.png"})
+            this.setState({moonSentence: 'Waxing Crescent', picOfMoonUrl: "https://i.ibb.co/C8Nh35n/waningcres.png"})
+            //the moon phases were mislabeled, this png is actually of a waxing cresc
 
         else if (moonDouble === 0.25) 
             this.setState({moonSentence: 'First Quarter', picOfMoonUrl: "https://i.ibb.co/dJgB3qC/firstQ.png"})
@@ -55,7 +56,8 @@ class MoonPhase extends React.Component {
         else if (moonDouble === 0.75)
             this.setState({moonSentence: 'Third Quarter', picOfMoonUrl: "https://i.ibb.co/QcWhVj5/thirdQ.png"})
         else if (0.75 < moonDouble && moonDouble < 1.0){
-            this.setState({moonSentence: 'Waning Crescent', picOfMoonUrl: "https://i.ibb.co/C8Nh35n/waningcres.png"});
+            this.setState({moonSentence: 'Waning Crescent', picOfMoonUrl: "https://i.ibb.co/cgGpzZF/waxingcres.png"});
+            //this actually a pic of waning cresc
            };
         
         

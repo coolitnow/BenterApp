@@ -21,6 +21,7 @@ class SunStuff extends React.Component {
         }
 
 
+
     }
 
     componentDidMount() {
@@ -117,14 +118,10 @@ class SunStuff extends React.Component {
         
     }
 
-
     render() {
 
-
-
-
         return (
-            <div className="Sun-Text">
+            <div className="Sun-Text"  onClick={this.props.sunHere}>
                 <div >sunrise: {this.state.rise}</div>
                 <div >sunset: {this.state.set}</div>
                 <div > day length: {this.state.daylight}</div>

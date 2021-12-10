@@ -95,6 +95,9 @@ body{
   max-height: 25vh;
   object-fit: contain;
 }
+.Header-Holders .sun {
+  margin-top: 50px;
+}
 .Sun-stuff{
   display: flex;
   flex-flow: column;
@@ -149,6 +152,7 @@ body{
   content: url(https://i.ibb.co/2tPYzB3/580b585b2edbce24c47b270f.png);
   position: absolute;
   width: 90%;
+  
   overflow: hidden;
   z-index: 1;
   
