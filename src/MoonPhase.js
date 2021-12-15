@@ -48,7 +48,7 @@ class MoonPhase extends React.Component {
         else if (moonDouble === 0.25) 
             this.setState({moonSentence: 'First Quarter', picOfMoonUrl: "https://i.ibb.co/dJgB3qC/firstQ.png"})
         else if (0.25 < moonDouble && moonDouble < 0.5)  
-            this.setState({moonSentence: 'Waxing Gibbous', picOfMoonUrl: "https://i.ibb.co/cgGpzZF/waxingcres.png"})
+            this.setState({moonSentence: 'Waxing Gibbous', picOfMoonUrl: "https://i.ibb.co/xfxxD6b/waxinggib.png"})
         else if (moonDouble === .5)
             this.setState({moonSentence: 'FULL MOOOOOOON!!!', picOfMoonUrl: "https://i.ibb.co/9ypTJvg/full.png"})
         else if (0.5 < moonDouble && moonDouble < 0.75)
@@ -66,6 +66,7 @@ class MoonPhase extends React.Component {
         return (this.state.moonSentence);
             
     }
+
 
 
     render() {
