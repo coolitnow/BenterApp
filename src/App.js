@@ -8,13 +8,16 @@ import MoonPhase from './MoonPhase';
 import MoonStuff from './MoonStuff';
 
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
       <div className="Header-Holders"><Sun /></div>
       
       <div className="Header-Holders">
-          <div className="spin">Sum Cool</div>
+        <div class="wrapper">
+	            Sum:Cool
+        </div>
       </div>
       
       <div className="Header-Holders"><MoonPhase /></div>
