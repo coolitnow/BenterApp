@@ -71,7 +71,7 @@ class SunStuff extends React.Component {
             let hour = parseInt(sunrise.substr(0, 2));
             //get hour, then convert using the offset grabbed from creepy geo API
             hour += this.state.offSet;
-            let recalcHour = hour + sunrise.substr(2, 3) + ' AM';
+            let recalcHour = hour + sunrise.substr(2, 3) + 'AM';
 
             this.setState({ rise: recalcHour });
         }
@@ -79,7 +79,7 @@ class SunStuff extends React.Component {
             //hour is only 1 digit
             let hour = parseInt(sunrise.substr(0, 1));
             hour += this.state.offSet;
-            let recalcHour = hour + sunrise.substr(1, 3) + ' AM';
+            let recalcHour = hour + sunrise.substr(1, 3) + 'AM';
             this.setState({ rise: recalcHour });
         }
         if (sunset.length === 11) {
@@ -87,14 +87,14 @@ class SunStuff extends React.Component {
             let hour = parseInt(sunset.substr(0, 2));
             //get hour, then convert to local time using the offset grabbed from creepy geo API
             hour += this.state.offSet;
-            let recalcHour = hour + sunset.substr(2, 3) + ' PM';
+            let recalcHour = hour + sunset.substr(2, 3) + 'PM';
 
             this.setState({ set: recalcHour });
         }
         else {
             let hour = parseInt(sunset.substr(0, 1));
             hour += this.state.offSet;
-            let recalcHour = hour + sunset.substr(1, 3) + ' PM';
+            let recalcHour = hour + sunset.substr(1, 3) + 'PM';
             this.setState({ set: recalcHour });
         }
 
@@ -122,9 +122,9 @@ class SunStuff extends React.Component {
 
         return (
             <div className="Sun-Text"  onClick={this.props.sunHere}>
-                <div >sunrise: {this.state.rise}</div>
-                <div >sunset: {this.state.set}</div>
-                <div > day length: {this.state.daylight}</div>
+                <div >sunrise:{this.state.rise}</div><br></br>
+                <div >sunset:{this.state.set}</div><br></br>
+                <div >length:{this.state.daylight}</div>
             
             </div>
 

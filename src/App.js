@@ -5,7 +5,6 @@ import Bored from './Bored';
 import Axolotl from './Axoltl';
 import Sun from './Sun.js';
 import MoonPhase from './MoonPhase';
-import MoonStuff from './MoonStuff';
 
 function App() {
   
